@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:31:45 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/03/18 12:20:48 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/03/20 11:16:03 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,19 @@
 
 # include "../libft/includes/libft.h"
 
-typedef struct s_list {
-	int value;
-	struct s_list* next;
-}				t_list;
+// Stack
+typedef struct s_struct
+{
+	int				value;
+	struct s_struct	*next;
+}				t_struct;
 
-int		sa(t_list **stack_a);
-int		sb(t_list **stack_b);
-int		ss(t_list **stack_a, t_list **stack_b);
-int		pa(t_list **stack_a, t_list **stack_b);
-int		pb(t_list **stack_b, t_list **stack_a);
-int		ra(t_list **stack_a);
-int		rb(t_list **stack_b);
-int		rr(t_list **stack_a, t_list **stack_b);
-int		rra(t_list **stack_a);
-int		rrb(t_list **stack_b);
-int		rrr(t_list **stack_a, t_list **stack_b);
+int		swap(t_list **stack);
+int		double_swap(t_list **a, t_list **b); 
+int		push(t_list **src, t_list **dest);
+int		rotate(t_list **stack);
+int		double_rotate(t_list **a, t_list **b);
+int		reverse_rotate(t_list **stack);
+int		double_reverse_rotate(t_list **a, t_list **b);
 
 #endif
