@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:31:45 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/03/20 11:16:03 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/03/20 13:48:07 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ typedef struct s_struct
 	struct s_struct	*next;
 }				t_struct;
 
-int		swap(t_list **stack);
-int		double_swap(t_list **a, t_list **b); 
-int		push(t_list **src, t_list **dest);
-int		rotate(t_list **stack);
-int		double_rotate(t_list **a, t_list **b);
-int		reverse_rotate(t_list **stack);
-int		double_reverse_rotate(t_list **a, t_list **b);
+int		swap(t_struct **stack);
+int		double_swap(t_struct **a, t_struct **b); 
+int		push(t_struct **src, t_struct **dest);
+int		rotate(t_struct **stack);
+int		double_rotate(t_struct **a, t_struct **b);
+int		reverse_rotate(t_struct **stack);
+int		double_reverse_rotate(t_struct **a, t_struct **b);
 
 #endif
