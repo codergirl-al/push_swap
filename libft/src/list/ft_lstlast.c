@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:24:23 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/09 14:51:02 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:44:20 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,4 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
+ 

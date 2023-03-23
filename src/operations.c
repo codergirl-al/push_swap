@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 13:16:47 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/03/21 13:54:44 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/03/23 14:00:45 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,10 @@ int	double_rotate(t_struct **a, t_struct **b)
 
 int	reverse_rotate(t_struct **stack)
 {
-	
+	t_struct	temp;
+	t_struct	first;
+
+	if (*stack == NULL)
+		return (0);
+	first = ft_lstadd_back()
 }
