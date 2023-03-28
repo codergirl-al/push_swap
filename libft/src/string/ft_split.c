@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 03:43:56 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/09 14:51:07 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/03/24 13:41:51 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ static	char	**free_array(char **ptr, int allocated)
 		i++;
 	}
 	free(ptr);
+	
 	return (NULL);
 }
 
