@@ -6,7 +6,7 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:45:28 by apeposhi          #+#    #+#              #
-#    Updated: 2023/03/21 09:48:20 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/03/31 21:32:16 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ OBJ_FILES	=	$(addsuffix .o, $(addprefix $(OBJ_DIR), $(SRC_NAME)))
 INC_FILES	=	$(addsuffix .h, $(addprefix $(INC_DIR), $(INC_NAME)))
 
 all : $(NAME)
+	@echo  PLS albina finish your push_swap
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
