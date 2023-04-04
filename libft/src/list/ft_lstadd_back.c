@@ -6,11 +6,11 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:16:29 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/03/27 15:48:49 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:24:21 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#incluude "../../includes/libft.h"
+#include "../../includes/libft.h"
 
 /*
 ** @brief append a node to a linked list.

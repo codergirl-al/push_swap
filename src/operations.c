@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 13:16:47 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/03 18:21:37 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:55:24 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int swap(t_struct **stack)
 
 int	double_swap(t_struct **a, t_struct **b)
 {
-	swap(&a);
-	swap(&b);
+	swap(a);
+	swap(b);
 }
 
 int	push(t_struct **src, t_struct **dest)

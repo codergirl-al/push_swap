@@ -6,7 +6,7 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:45:28 by apeposhi          #+#    #+#              #
-#    Updated: 2023/03/31 21:32:16 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/04/04 10:24:58 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ OBJ_DIR		=	obj/
 INC_DIR		=	include/
 LIBFT		=	libft/libft.a
 
-SRC_NAME	=	main
+SRC_NAME	=	main operations
 INC_NAME	=	push_swap
 
 SRC_FILES	=	$(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_NAME)))
