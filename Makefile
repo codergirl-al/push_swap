@@ -6,36 +6,9 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:45:28 by apeposhi          #+#    #+#              #
-#    Updated: 2023/04/04 10:24:58 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/04/05 18:44:42 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-	#                            / /  `
-	#           +               | |
-	#                       *     .--.
-	#                  '         \ \__,
-	#              *          +   '--'  *
-	#                  +   /\\
-	#     +              .'  '.   *
-	#            *      /======\\      +
-	#                  ;:.  _   ;
-	#                  |:. (_)  |
-	#                  |:.  _   |
-	#        +         |:. (_)  |          *
-	#                  ;:.      ;
-	#                .' \:.    / `.
-	#               / .-'':._.'`-. \\
-	#               |/    /||\    \\|
-	#             _..--"""````"""--.._
-	#       _.-'``                    ``'-._
-	#     -'                                '-
-	#                                     _     _ 
-	#                                    | |   (_)
-	#   ____ ____   ____ ____   ___   ___| | _  _ 
-	#  / _  |  _ \ / _  |  _ \ / _ \ /___| || \| |
-	# ( ( | | | | ( (/ /| | | | |_| |___ | | | | |
-	#  \_||_| ||_/ \____| ||_/ \___/(___/|_| |_|_|
-	#       |_|         |_|      
 
 AUTHORS		=	apeposhi
 DATE		=	$$(date +%Y/%m/%d)
@@ -58,13 +31,12 @@ OBJ_FILES	=	$(addsuffix .o, $(addprefix $(OBJ_DIR), $(SRC_NAME)))
 INC_FILES	=	$(addsuffix .h, $(addprefix $(INC_DIR), $(INC_NAME)))
 
 all : $(NAME)
-	@echo  PLS albina finish your push_swap
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) -c $< -I$(INC_DIR)
+	$(CC) $(CFLAGS) -c $< -I $(INC_DIR)
 #
 $(NAME) : $(OBJ_DIR) $(OBJ_FILES) $(INC_FILES) 
 	@make -C ./libft

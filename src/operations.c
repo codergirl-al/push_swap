@@ -6,19 +6,19 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 13:16:47 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/04 11:55:24 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:55:15 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int swap(t_struct **stack)
+void swap(t_struct **stack)
 {
 	t_struct	*temp;
 	t_struct	*second;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		return (0);
+		return ;
 	
 	temp = *stack;
 	second = (*stack)->next;
@@ -30,19 +30,19 @@ int swap(t_struct **stack)
 	second->next = temp;
 }
 
-int	double_swap(t_struct **a, t_struct **b)
+void	double_swap(t_struct **a, t_struct **b)
 {
 	swap(a);
 	swap(b);
 }
 
-int	push(t_struct **src, t_struct **dest)
+void	push(t_struct **src, t_struct **dest)
 {
 	t_struct	*temp;
 	t_struct	*new_src_top;
 	
 	if (*src == NULL)
-		return (0);
+		return ;
 	temp = *src;
 	new_src_top = (*src)->next;
 	temp->next = *dest;
@@ -50,14 +50,14 @@ int	push(t_struct **src, t_struct **dest)
 	*src = new_src_top;
 }
 
-int	rotate(t_struct **stack)
+void	rotate(t_struct **stack)
 {
 	t_struct	*temp;
 	t_struct	*new_first;
 	t_struct	*last;
 	
 	if (*stack == NULL)
-		return (0);
+		return ;
 	temp = *stack;
 	new_first = (*stack)->next;
 	last = 
@@ -66,19 +66,19 @@ int	rotate(t_struct **stack)
 	last->next = temp;
 }
 
-int	double_rotate(t_struct **a, t_struct **b)
+void	double_rotate(t_struct **a, t_struct **b)
 {
 	rotate(a);
 	rotate(b);
 }
 
-int	reverse_rotate(t_struct **stack)
+void	reverse_rotate(t_struct **stack)
 {
-	t_struct	last;
-	t_struct	second_last;
+	t_struct	*last;
+	t_struct	*second_last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		return (0);
+		return ;
 	last = *stack;
 	while (last->next != NULL)
 		last = last->next;
