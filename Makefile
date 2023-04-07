@@ -6,48 +6,51 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:45:28 by apeposhi          #+#    #+#              #
-#    Updated: 2023/04/05 18:44:42 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/04/06 16:50:48 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 AUTHORS		=	apeposhi
 DATE		=	$$(date +%Y/%m/%d)
 
-CC			=	cc
-CFLAGS		=	-Werror -Wextra -Wall
+VPATH 		= 	src
 
-NAME 		=	push_swap
+CC 			= 	cc
+CFLAGS 		= 	-Wall -Wextra -Werror -g
+INCFLAGS 	= 	-I include -I libft
+AR 			= 	ar
+ARFLAGS 	= 	-rcs
 
-SRC_DIR		=	src/
-OBJ_DIR		=	obj/
-INC_DIR		=	include/
-LIBFT		=	libft/libft.a
+NAME 		= 	push_swap
+SRC 		= 	$(addprefix src/, push_swap.c operations.c)
+OBJ 		= 	$(addprefix obj/, $(notdir $(SRC:.c=.o)))
+LIBFT		=	libft
+LIBFT_NAME	=	libft.a
 
-SRC_NAME	=	main operations
-INC_NAME	=	push_swap
+$(NAME): $(OBJ)
+	@make -C $(LIBFT)
+	$(CC) -o $(NAME) $(CFLAGS) $(INCFLAGS) $(OBJ)
 
-SRC_FILES	=	$(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_NAME)))
-OBJ_FILES	=	$(addsuffix .o, $(addprefix $(OBJ_DIR), $(SRC_NAME)))
-INC_FILES	=	$(addsuffix .h, $(addprefix $(INC_DIR), $(INC_NAME)))
+obj:
+	mkdir obj
 
-all : $(NAME)
+obj/%.o: %.c | obj
+	$(CC) -c $(CFLAGS) $(INCFLAGS) $< -o $@
 
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
+san: CFLAGS += -fsanitize=address
 
-$(OBJ_DIR)%.o : $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) -c $< -I $(INC_DIR)
-#
-$(NAME) : $(OBJ_DIR) $(OBJ_FILES) $(INC_FILES) 
-	@make -C ./libft
-	$(CC) $(CFLAGS) $(OBJ_FILES) -o $(NAME) -I $(INC_DIR)
+san: re
 
 clean:
-	cd libft && make clean
-	@rm -rf $(OBJ_DIR)
+	@make clean -C $(LIBFT)
+	@rm -f $(OBJ)
 
 fclean: clean
-	cd libft && make fclean
-	@rm -f $(NAME) .header
+	@make fclean -C $(LIBFT)
+	@rm -f $(NAME)
 
 re: fclean all
+
+all: $(NAME)
+
+.PHONY: clean fclean re all run
