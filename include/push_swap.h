@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:31:45 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/07 14:55:40 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:53:39 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	double_reverse_rotate(t_struct **a, t_struct **b);
 void	print_err();
 void	convert(char **arguments, int i);
 void	validate_args(int argc, char **argv);
+void	initialize_stacks(t_struct **a, t_struct **b);
 
 #endif

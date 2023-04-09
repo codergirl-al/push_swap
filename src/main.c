@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:09:14 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/07 17:18:20 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:04:03 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 int	main(int argc, char **argv)
 {
-	t_struct	**a;
-	t_struct	**b;
+	t_struct	**a = NULL;
+	t_struct	**b = NULL;
 
 	if (argc < 2)
 		return (-1);
 	validate_args(argc, argv);
-	a = (t_struct **)malloc(sizeof(t_struct));
-	b = (t_struct **)malloc(sizeof(t_struct));
+	initialize_stacks(a, b);
 	return (0);
 }

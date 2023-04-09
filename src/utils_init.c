@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_functions.c                                  :+:      :+:    :+:   */
+/*   utils_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 14:50:41 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/09 14:54:07 by apeposhi         ###   ########.fr       */
+/*   Created: 2023/04/09 14:22:50 by apeposhi          #+#    #+#             */
+/*   Updated: 2023/04/09 14:51:10 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	print_err()
+void	initialize_stacks(t_struct **a, t_struct **b)
 {
-	ft_putendl_fd("Error", 1);
-	exit(0);
+    a = (t_struct **)malloc(sizeof(t_struct));
+	b = (t_struct **)malloc(sizeof(t_struct));
+    *a = NULL;
+    *b = NULL;
 }
-
