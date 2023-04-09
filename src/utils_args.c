@@ -12,17 +12,18 @@
 
 #include "../include/push_swap.h"
 
-void	convert(char **arguments, int i)
+void	convert(char **arguments, int index)
 {
 	int	temp;
 	
-	while (arguments[++i])
+	while (arguments[++index])
 	{
-		temp = ft_atoi(arguments[i]);
-		if (!ft_isnum(arguments[i]))
+		temp = ft_atoi(arguments[index]);
+		if (!ft_isnum(arguments[index]))
 			print_err();
-		if (ft_contains(temp, arguments, i))
+		if (ft_contains(temp, arguments, index))
 			print_err();
+			// check
 		if (temp < -2147483648 || temp > 2147483647)
 			print_err();
 	}
@@ -33,14 +34,14 @@ void	convert(char **arguments, int i)
 void	validate_args(int argc, char **argv)
 {
 	char			**arguments;
-	int				i;
+	int				index;
 
-	i = 0;
+	index = 0;
 	if (argc == 2)
 		arguments = ft_split(argv[1], ' ');
 	else
 		arguments = argv;
-	convert(arguments, i);
+	convert(arguments, index);
 	if (argc == 2)
 		free(argc);
 }
