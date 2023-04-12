@@ -6,19 +6,18 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:29:42 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/06 17:01:22 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/12 12:56:07 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../include/push_swap.h"
 
 void print_list(t_struct *head) {
     while (head != NULL) {
-        printf("%d ", head->value);
+        ft_printf("%d ", head->value);
         head = head->next;
     }
-    printf("\n");
+    ft_printf("\n");
 }
 
 int main()
@@ -64,15 +63,15 @@ int main()
     fourth->next = NULL;
     third->next = fourth;
 
-    printf("A linked list: ");
+    ft_printf("A linked list: ");
     print_list(a);
 
-    printf("B linked list: ");
+    ft_printf("B linked list: ");
     print_list(head);
 
     double_swap(&a, &head);
 
-    printf("Linked List after swapping: ");
+    ft_printf("Linked List after swapping: ");
     print_list(a);
     print_list(head);
 

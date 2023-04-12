@@ -6,12 +6,11 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:09:14 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/11 12:01:43 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/12 13:42:49 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 int	main(int argc, char **argv)
 {
@@ -25,5 +24,6 @@ int	main(int argc, char **argv)
 	b = (t_struct **)malloc(sizeof(t_struct));
     *a = NULL;
     *b = NULL;
+	init_stack(a, argc, argv);
 	return (0);
 }

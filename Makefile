@@ -6,7 +6,7 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:45:28 by apeposhi          #+#    #+#              #
-#    Updated: 2023/04/07 16:54:12 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/04/12 13:06:15 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ AR 			= 	ar
 ARFLAGS 	= 	-rcs
 
 NAME 		= 	push_swap
-SRC 		= 	$(addprefix src/, push_swap.c operations.c main.c utils_args.c utils_functions.c)
+SRC 		= 	$(addprefix src/, push_swap.c operations.c main.c utils_args.c utils_functions.c utils_init.c)
 OBJ 		= 	$(addprefix obj/, $(notdir $(SRC:.c=.o)))
 LIBFT		=	libft
 LIBFT_NAME	=	libft.a
