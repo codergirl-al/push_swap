@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:40:24 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/01/09 14:50:53 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:45:43 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*substr;
 
-	if (!s || start < 0)
+	if (!s || !start)
 		return (NULL);
 	i = 0;
 	if (ft_strlen(s) < start)

@@ -6,29 +6,50 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:18:34 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/09 14:48:30 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:24:34 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	convert(char **arguments, int index)
+static int	ft_is_valid_number(char *n)
+{
+	if (*n == '-')
+		n++;
+	if (!*n)
+		return (0);
+	while (*n)
+	{
+		if (!ft_isdigit(*n))
+			return (0);
+		n++;
+	}
+	return (1);
+}
+
+static int	ft_check_duplicate_number(int n, char **argv, int index) {
+    while (argv[++index]) {
+        if (ft_atoi(argv[index]) == n)
+            return (1);
+    }
+    return (0);
+}
+
+static void	ft_convert_arguments(char **arguments, int index)
 {
 	int	temp;
 	
 	while (arguments[++index])
 	{
 		temp = ft_atoi(arguments[index]);
-		if (!ft_isnum(arguments[index]))
-			print_err();
-		if (ft_contains(temp, arguments, index))
-			print_err();
+		if (!ft_is_valid_number(arguments[index]))
+			ft_print_error();
+		if (ft_check_duplicate_number(temp, arguments, index))
+			ft_print_error();
 			// check
-		if (temp < -2147483648 || temp > 2147483647)
-			print_err();
-	}
-	if (arguments == 2)
-		ft_free(arguments);	
+		if (temp < INT_MIN || temp > INT_MAX)
+			ft_print_error();
+	}	
 }
 
 void	validate_args(int argc, char **argv)
@@ -41,7 +62,7 @@ void	validate_args(int argc, char **argv)
 		arguments = ft_split(argv[1], ' ');
 	else
 		arguments = argv;
-	convert(arguments, index);
+	ft_convert_arguments(arguments, index);
 	if (argc == 2)
-		free(argc);
+		ft_free_arguments(arguments);
 }

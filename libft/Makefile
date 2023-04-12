@@ -6,13 +6,13 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 14:25:17 by apeposhi          #+#    #+#              #
-#    Updated: 2023/01/17 11:26:40 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/04/11 16:45:24 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # PROJECT #
 NAME	= libft.a
-CC		= @clang
+CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= @rm -f
 FILE	= $(shell ls -lR src/ | grep -F .c | wc -l)
