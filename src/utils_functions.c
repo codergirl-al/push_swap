@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:50:41 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/11 17:15:42 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/12 10:24:36 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@ void	ft_free_stack(t_struct **s)
 
 void	ft_free_arguments(char **s)
 {
-	int	index;
+	char	**ptr;
 
-	index = ft_strlen(s);
-	while (--index  >= 0)
-		free(s[index]);
+	ptr = s;
+	while (*ptr != NULL)
+	{
+		free (*ptr);
+		ptr++;
+	}
 }
 
 void	ft_print_list(t_struct *head) {
@@ -47,5 +50,5 @@ void	ft_print_list(t_struct *head) {
         ft_printf("%d ", head->value);
         head = head->next;
     }
-    printf("\n");
+    ft_printf("\n");
 }
