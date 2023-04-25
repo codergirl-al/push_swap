@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:31:45 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/25 18:55:23 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/25 20:53:25 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_free_arguments(char **s);
 void	ft_print_list(t_struct *head);
 void	validate_args(int argc, char **argv);
 void	init_stack(t_struct **a, int argc, char **argv);
-int		ft_is_sorted(t_struct *s);
+int		ft_is_sorted(t_struct **s);
 
 // struct creation functions
 t_struct	*ft_struct_new(int value);
