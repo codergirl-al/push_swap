@@ -6,51 +6,51 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:45:28 by apeposhi          #+#    #+#              #
-#    Updated: 2023/04/12 13:06:15 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/04/25 18:55:03 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 AUTHORS		=	apeposhi
-DATE		=	$$(date +%Y/%m/%d)
+NAME		= 	push_swap
 
-VPATH 		= 	src
+CC			=	cc
+CFLAGS 		=	-Wall -Wextra -Werror
+INC			=	-I ./include/
 
-CC 			= 	cc
-CFLAGS 		= 	-Wall -Wextra -Werror -g
-INCFLAGS 	= 	-I include -I libft
-AR 			= 	ar
-ARFLAGS 	= 	-rcs
+LIBFT_PATH	 =	libft/
+LIBFT_NAME	 =	libft.a
+LIBFT		 =	$(LIBFT_PATH)$(LIBFT_NAME)
 
-NAME 		= 	push_swap
-SRC 		= 	$(addprefix src/, push_swap.c operations.c main.c utils_args.c utils_functions.c utils_init.c)
-OBJ 		= 	$(addprefix obj/, $(notdir $(SRC:.c=.o)))
-LIBFT		=	libft
-LIBFT_NAME	=	libft.a
+SRC_PATH =	src/
+OBJ_PATH =	obj/
 
-$(NAME): $(OBJ)
-	@make -C $(LIBFT)
-	$(CC) -o $(NAME) $(CFLAGS) $(INCFLAGS) $(OBJ)
+SRC		 =  main.c operations.c utils_args.c utils_functions.c utils_init.c utils_list_functions.c utils_sort.c
 
-obj:
-	mkdir obj
+SRCS 	=	$(addprefix $(SRC_PATH), $(SRC))
+OBJS 	=	${SRCS:${SRC_PATH}%.c=${OBJ_PATH}%.o}
 
-obj/%.o: %.c | obj
-	$(CC) -c $(CFLAGS) $(INCFLAGS) $< -o $@
+$(NAME): $(LIBFT) $(OBJS)
+	$(CC) -o $(NAME) $(OBJS) $(LIBFT) $(LFLAGS)
 
-san: CFLAGS += -fsanitize=address
+$(OBJ_PATH)%.o:$(SRC_PATH)%.c ./include/push_swap.h
+	mkdir -p $(OBJ_PATH)
+	$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 
-san: re
-
-clean:
-	@make clean -C $(LIBFT)
-	@rm -f $(OBJ)
-
-fclean: clean
-	@make fclean -C $(LIBFT)
-	@rm -f $(NAME)
-
-re: fclean all
+$(LIBFT):
+	$(MAKE) -sC $(LIBFT_PATH)
 
 all: $(NAME)
 
-.PHONY: clean fclean re all run
+clean:
+	rm -rdf $(OBJ_PATH)
+	$(MAKE) clean -C $(LIBFT_PATH)
+
+fclean: clean
+	rm -f $(NAME)
+	rm -f $(LIBFT_PATH)$(LIBFT_NAME)
+
+re: fclean all
+
+bonus: all
+
+.PHONY: all clean fclean re
