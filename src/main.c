@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:09:14 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/25 21:14:18 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/25 23:02:06 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static int	ft_sort_control(t_struct **a, t_struct **b)
 		return (0);
 	}
 	ft_sort_control(a, b);
+	return (0);
 }
 
 int	main(int argc, char **argv)
