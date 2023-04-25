@@ -22,7 +22,7 @@ void	ft_struct_add_back(t_struct **lst, t_struct *new_node)
 	{
 		if (*lst)
 		{
-			lista = ft_lstlast(*lst);
+			lista = ft_struct_last(*lst);
 			lista -> next = new_node;
 		}
 		else
