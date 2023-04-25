@@ -40,3 +40,14 @@ t_struct	*ft_struct_last(t_struct *str)
 	}
 	return (str);
 }
+
+int	ft_stack_size(t_struct *stack)
+{
+    int len;
+    len = 0;
+    while (stack) {
+        stack = stack->next;
+        len++;
+    }
+    return (len);
+}
