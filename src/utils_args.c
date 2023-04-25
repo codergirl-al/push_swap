@@ -6,25 +6,23 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:18:34 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/11 17:24:34 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:56:26 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	ft_is_valid_number(char *n)
-{
-	if (*n == '-')
-		n++;
-	if (!*n)
-		return (0);
-	while (*n)
-	{
-		if (!ft_isdigit(*n))
-			return (0);
-		n++;
-	}
-	return (1);
+static int ft_is_valid_number(char *n) {
+  if (*n == '-')
+    n++;
+  if (!*n)
+    return (0);
+  while (*n) {
+    if (!ft_isdigit(*n))
+      return (0);
+    n++;
+  }
+  return (1);
 }
 
 static int	ft_check_duplicate_number(int n, char **argv, int index) {
@@ -46,7 +44,6 @@ static void	ft_convert_arguments(char **arguments, int index)
 			ft_print_error();
 		if (ft_check_duplicate_number(temp, arguments, index))
 			ft_print_error();
-			// check
 		if (temp < INT_MIN || temp > INT_MAX)
 			ft_print_error();
 	}	
