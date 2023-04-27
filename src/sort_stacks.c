@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 00:51:32 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/26 01:00:38 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:34:18 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ static void sort_4(t_struct **a, t_struct **b) {
   if (distance == 1)
     rotate(a);
   else if (distance == 2)
-    rotate(a), ra(a);
+    rotate(a);
   else if (distance == 3)
-    reverse_rotate(a), rra(a);
+    reverse_rotate(a);
   if (ft_is_sorted(a))
     return;
   push(a, b);
@@ -72,11 +72,11 @@ void sort_5(t_struct **a, t_struct **b) {
   if (distance == 1)
     rotate(a);
   else if (distance == 2)
-    rotate(a), ra(a);
+    rotate(a);
   else if (distance == 3)
-    reverse_rotate(a), rra(a);
+    reverse_rotate(a), reverse_rotate(a);
   else if (distance == 4)
-    rra(a);
+    reverse_rotate(a);
   if (ft_is_sorted(a))
     return;
   push(a, b);
@@ -84,7 +84,8 @@ void sort_5(t_struct **a, t_struct **b) {
   push(a, b);
 }
 
-void simple_sort(t_struct **a, t_struct **b) {
+void simple_sort(t_struct **a, t_struct **b)
+{
   int size;
 
   if (ft_is_sorted(a) || ft_stack_size(*a) == 0 ||
