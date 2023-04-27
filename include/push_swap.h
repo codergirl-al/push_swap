@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:31:45 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/26 00:29:41 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:48:31 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_struct
 	struct s_struct	*next;
 }				t_struct;
 
+// instructions
 void	swap(t_struct **stack);
 void	double_swap(t_struct **a, t_struct **b); 
 void	push(t_struct **src, t_struct **dest);
@@ -41,10 +42,13 @@ void	validate_args(int argc, char **argv);
 void	init_stack(t_struct **a, int argc, char **argv);
 int		ft_is_sorted(t_struct **s);
 int		ft_stack_size(t_struct *stack);
-
+int		get_distance(t_struct **s, int i);
 // struct creation functions
 t_struct	*ft_struct_new(int value);
 void		ft_struct_add_back(t_struct **lst, t_struct *new_node);
 t_struct	*ft_struct_last(t_struct *str);
+
+// sorting algorithms
+void simple_sort(t_struct **a, t_struct **b);
 
 #endif
