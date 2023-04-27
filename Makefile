@@ -6,7 +6,7 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:45:28 by apeposhi          #+#    #+#              #
-#    Updated: 2023/04/25 18:55:03 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/04/26 17:40:45 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ LIBFT		 =	$(LIBFT_PATH)$(LIBFT_NAME)
 SRC_PATH =	src/
 OBJ_PATH =	obj/
 
-SRC		 =  main.c operations.c utils_args.c utils_functions.c utils_init.c utils_list_functions.c utils_sort.c
+SRC		 =  main.c operations.c utils_args.c utils_functions.c utils_init.c utils_list_functions.c utils_sort.c sort_stacks.c
 
 SRCS 	=	$(addprefix $(SRC_PATH), $(SRC))
 OBJS 	=	${SRCS:${SRC_PATH}%.c=${OBJ_PATH}%.o}
