@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:31:45 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/26 17:48:31 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:41:52 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ typedef struct s_struct
 }				t_struct;
 
 // instructions
-void	swap(t_struct **stack);
-void	double_swap(t_struct **a, t_struct **b); 
-void	push(t_struct **src, t_struct **dest);
-void	rotate(t_struct **stack);
-void	double_rotate(t_struct **a, t_struct **b);
-void	reverse_rotate(t_struct **stack);
-void	double_reverse_rotate(t_struct **a, t_struct **b);
+int		swap(t_struct **stack, char *s);
+int		double_swap(t_struct **a, t_struct **b); 
+int		push(t_struct **src, t_struct **dest, char *s);
+int		rotate(t_struct **stack, char *s);
+int		double_rotate(t_struct **a, t_struct **b);
+int 	reverse_rotate(t_struct **stack, char *s);
+int		double_reverse_rotate(t_struct **a, t_struct **b);
+void	ft_print_operation(char *operation, char *stack);
 
 // utils
 void	ft_print_error();
@@ -49,6 +50,11 @@ void		ft_struct_add_back(t_struct **lst, t_struct *new_node);
 t_struct	*ft_struct_last(t_struct *str);
 
 // sorting algorithms
-void simple_sort(t_struct **a, t_struct **b);
+void	simple_sort(t_struct **a, t_struct **b);
+void 	radix_sort(t_struct **a, t_struct **b);
+
+// test - to be deleted later
+void print_list(t_struct *head);
 
 #endif
+ 
