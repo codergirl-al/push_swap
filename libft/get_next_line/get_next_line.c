@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:43:02 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/02/16 09:11:22 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 12:36:13 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,8 @@ char	*ft_get_read(char *s_buff)
 		i++;
 	}
 	if (s_buff[i] == '\n')
-	{
 		str[i] = s_buff[i];
-		i++;
-	}
-	*(str + i) = '\0';
+	*(str + ++i) = '\0';
 	return (str);
 }
 

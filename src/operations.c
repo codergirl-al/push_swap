@@ -6,21 +6,21 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 13:16:47 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 06:53:37 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 12:21:33 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int swap(t_struct **stack, char *s)
+int	swap(t_struct **stack, char *s)
 {
 	t_struct	*temp;
 	t_struct	*second;
-    int 		temp_value;
-    int 		temp_index;
-	
+	int			temp_value;
+	int			temp_index;
+
 	if (ft_stack_size(*stack) < 2)
-		return (-1);	
+		return (-1);
 	temp = *stack;
 	second = temp->next;
 	if (!temp && !second)
@@ -51,7 +51,7 @@ int	push(t_struct **src, t_struct **dest, char *s)
 	t_struct	*temp;
 	t_struct	*head_src;
 	t_struct	*head_dest;
-	
+
 	if (ft_stack_size(*src) == 0)
 		return (-1);
 	head_src = *src;
@@ -77,27 +77,27 @@ int	push(t_struct **src, t_struct **dest, char *s)
 
 int	rotate(t_struct **stack, char *s)
 {
-    t_struct	*first;
-    t_struct	*last;
+	t_struct	*first;
+	t_struct	*last;
 
-    if (ft_stack_size(*stack) < 2)
-            return (-1);
-    first = *stack;
-    last = ft_struct_last(first);
-    *stack = first->next;
-    first->next = NULL;
-    last->next = first;
-    if (s[0] != 'x')
-	    ft_print_operation("r", s);
-    return (0);
+	if (ft_stack_size(*stack) < 2)
+		return (-1);
+	first = *stack;
+	last = ft_struct_last(first);
+	*stack = first->next;
+	first->next = NULL;
+	last->next = first;
+	if (s[0] != 'x')
+		ft_print_operation("r", s);
+	return (0);
 }
 
 int	double_rotate(t_struct **a, t_struct **b)
 {
-    if ((ft_stack_size(*a) < 2) || (ft_stack_size(*b) < 2))
-        return (-1);
-    rotate(a, "x");
-    rotate(b, "x");
-    ft_print_operation("rr", "r");
-    return (0);
+	if ((ft_stack_size(*a) < 2) || (ft_stack_size(*b) < 2))
+		return (-1);
+	rotate(a, "x");
+	rotate(b, "x");
+	ft_print_operation("rr", "r");
+	return (0);
 }

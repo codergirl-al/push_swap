@@ -12,18 +12,19 @@
 
 #include "../include/push_swap.h"
 
-int ft_is_sorted(t_struct **s)
+int	ft_is_sorted(t_struct **s)
 {
-  t_struct *head;
-  int prev;
+	t_struct	*head;
+	int			prev;
 
-  head = *s;
-  prev = INT_MIN;
-  while (s != NULL) {
-    if (head->value < prev)
-      return (0);
-    prev = head->value;
-    head = head->next;
-  }
-  return (1);
+	head = *s;
+	prev = INT_MIN;
+	while (s != NULL)
+	{
+		if (head->value < prev)
+			return (0);
+		prev = head->value;
+		head = head->next;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:05:27 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/26 17:51:40 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 12:38:08 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_lstadd_front(t_list **lst, t_list *list)
 	if (lst)
 	{
 		if (*lst)
-            list->next = *lst;
-        *lst = list;
-    }
+			list->next = *lst;
+		*lst = list;
+	}
 }
