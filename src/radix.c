@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 14:30:07 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 06:46:00 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 11:23:14 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void radix_sort(t_struct **a, t_struct **b)
   head_a = *a;
   size = ft_stack_size(head_a);
   max_bits = get_max_bits(a);
-  ft_printf("Deez nuts max bits = %d\n", max_bits);
   while (i < max_bits)
   {
 	j = 0;

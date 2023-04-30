@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 00:51:32 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 06:58:18 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 11:25:57 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static void sort_3(t_struct **a)
     return;
   if (head->index == min && head->next->index != next_min)
   {
-    ft_printf("deez nuts %d\n", min);
     rotate(a, "a");
     swap(a, "a");
     reverse_rotate(a, "a");
@@ -62,7 +61,6 @@ static void sort_3(t_struct **a)
       reverse_rotate(a, "a");
     } 
   }
-    ft_printf("\ntest\n");
 }
 
 static void sort_4(t_struct **a, t_struct **b) {
@@ -101,9 +99,9 @@ void sort_5(t_struct **a, t_struct **b) {
 		reverse_rotate(a, "a");
 	if (ft_is_sorted(a))
 		return;
-	push(a, b,"a");
+	push(a, b,"b");
 	sort_4(a, b);
-	push(a, b, "a");
+	push(b, a, "a");
 }
 
 void simple_sort(t_struct **a, t_struct **b)
@@ -114,7 +112,6 @@ void simple_sort(t_struct **a, t_struct **b)
 			ft_stack_size(*a) == 1)
 		return;
 	size = ft_stack_size(*a);
-	ft_printf("the stack size from simple sort function: %d\n", ft_stack_size(*a));
 	if (size == 2)
 		swap(a, "a");
 	else if (size == 3)

@@ -9,6 +9,7 @@ t_struct	*ft_struct_new(int value)
 	if (new_node)
 	{
 		new_node -> value = value;
+		new_node -> index = -1;
 		new_node -> next = NULL;
 	}
 	return (new_node);
