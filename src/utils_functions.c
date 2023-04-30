@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:50:41 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/26 17:48:12 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 11:37:31 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,6 @@ void	ft_free_arguments(char **s)
 		free (*ptr);
 		ptr++;
 	}
-}
-
-void	ft_print_list(t_struct *head) {
-    while (head != NULL) {
-        ft_printf("%d ", head->value);
-        head = head->next;
-    }
-    ft_printf("\n");
 }
 
 int	get_distance(t_struct **s, int i)
