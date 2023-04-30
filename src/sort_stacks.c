@@ -6,39 +6,27 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 00:51:32 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 22:15:04 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 22:31:08 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// static int	get_max(t_struct **stack)
-// {
-// 	t_struct	*head;
-// 	int			max;
-
-// 	head = *stack;
-// 	max = head->index;
-// 	while (head->next)
-// 	{
-// 		head = head->next;
-// 		if ((head->index > max))
-// 			max = head->index;
-// 	}
-// 	return (max);
-// }
-
-static void	sort_3(t_struct **a)
+static void	handle_b(t_struct **a, t_struct **b)
 {
-	t_struct	*head;
+	while (ft_stack_size(*b) != 0)
+		push(b, a, "a");
+}
+
+static void	sort_3(t_struct **a, t_struct **b)
+{
 	int			first;
 	int			second;
 	int			third;
 
-	head = *a;
-	first = head -> value;
-	second = head -> next -> value;
-	third = head -> next -> next -> value;
+	first = (*a)->value;
+	second = (*a)->next->value;
+	third = (*a)->next->next->value;
 	if ((first > second) && (first < third) && (second < third))
 		swap(a, "a");
 	else if ((first > second) && (first > third) && (second > third))
@@ -55,9 +43,10 @@ static void	sort_3(t_struct **a)
 	}
 	else if ((first < second) && (first > third) && (second > third))
 		reverse_rotate(a, "a");
+	handle_b(a, b);
 }
 
-void	sort_5(t_struct **a, t_struct **b)
+static void	sort_5(t_struct **a, t_struct **b)
 {
 	int			i;
 	t_struct	*last_p;
@@ -66,7 +55,7 @@ void	sort_5(t_struct **a, t_struct **b)
 	while (ft_stack_size(*a) > 3)
 	{
 		last_p = ft_struct_last(*a);
-		if ((*a) -> index == i)
+		if ((*a)->index == i)
 		{
 			push(a, b, "b");
 			i++;
@@ -83,9 +72,7 @@ void	sort_5(t_struct **a, t_struct **b)
 		else
 			rotate(a, "a");
 	}
-	sort_3(a);
-	while (ft_stack_size(*b) != 0)
-		push(b, a, "a");
+	sort_3(a, b);
 }
 
 void	simple_sort(t_struct **a, t_struct **b)
@@ -99,13 +86,7 @@ void	simple_sort(t_struct **a, t_struct **b)
 	if (size == 2)
 		write(1, "sa\n", 3);
 	else if (size == 3)
-		sort_3(a);
+		sort_3(a, b);
 	else if (size <= 5)
 		sort_5(a, b);
 }
-
-
-// rotate rotate swap for two smallest
-// push b smallest
-// sort three
-// push back

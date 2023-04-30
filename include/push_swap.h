@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 22:16:59 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 22:17:00 by apeposhi         ###   ########.fr       */
+/*   Created: 2023/04/30 22:19:35 by apeposhi          #+#    #+#             */
+/*   Updated: 2023/04/30 22:20:47 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ typedef struct s_struct
 }				t_struct;
 
 int			swap(t_struct **stack, char *s);
-int			double_swap(t_struct **a, t_struct **b); 
+int			double_swap(t_struct **a, t_struct **b);
 int			push(t_struct **src, t_struct **dest, char *s);
 int			rotate(t_struct **stack, char *s);
 int			double_rotate(t_struct **a, t_struct **b);
-int 		reverse_rotate(t_struct **stack, char *s);
+int			reverse_rotate(t_struct **stack, char *s);
 int			double_reverse_rotate(t_struct **a, t_struct **b);
 void		ft_print_operation(char *operation, char *stack);
 void		ft_print_error(void);
@@ -43,7 +43,6 @@ t_struct	*ft_struct_new(int value);
 void		ft_struct_add_back(t_struct **lst, t_struct *new_node);
 t_struct	*ft_struct_last(t_struct *str);
 void		simple_sort(t_struct **a, t_struct **b);
-void 		radix_sort(t_struct **a, t_struct **b);
+void		radix_sort(t_struct **a, t_struct **b);
 
 #endif
- 
