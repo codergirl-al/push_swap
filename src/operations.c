@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 13:16:47 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 06:53:37 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 07:21:35 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	rotate(t_struct **stack, char *s)
     t_struct	*first;
     t_struct	*last;
 
+	ft_printf("\ntest\n");
     if (ft_stack_size(*stack) < 2)
             return (-1);
     first = *stack;
