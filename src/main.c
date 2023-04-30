@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:09:14 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 11:58:26 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 14:15:56 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 	*a = NULL;
 	*b = NULL;
 	init_stack(a, argc, argv);
-	if (ft_is_sorted(a))
+	if (ft_is_sorted(a) || ft_stack_size(*a) == 1)
 	{
 		ft_free_stack(a);
 		ft_free_stack(b);

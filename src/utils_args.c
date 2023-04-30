@@ -6,23 +6,24 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:18:34 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 12:15:21 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 14:33:45 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	ft_is_valid_number(char *n)
+static int	ft_isnum(char *num)
 {
-	if (*n == '-')
-		n++;
-	if (!*n)
-		return (0);
-	while (*n)
+	int	i;
+
+	i = 0;
+	if (num[0] == '-')
+		i++;
+	while (num[i])
 	{
-		if (!ft_isdigit(*n))
+		if (!ft_isdigit(num[i]))
 			return (0);
-		n++;
+		i++;
 	}
 	return (1);
 }
@@ -42,7 +43,7 @@ static void	ft_convert_arguments(char **arguments, int index)
 	while (arguments[++index])
 	{
 		temp = ft_atoi(arguments[index]);
-		if (!ft_is_valid_number(arguments[index]))
+		if (!ft_isnum(arguments[index]))
 			ft_print_error();
 		if (ft_check_duplicate_number(temp, arguments, index))
 			ft_print_error();
@@ -56,11 +57,14 @@ void	validate_args(int argc, char **argv)
 	char	**arguments;
 	int		index;
 
-	index = 0;
+	index = -1;
 	if (argc == 2)
 		arguments = ft_split(argv[1], ' ');
 	else
+	{
+		index += 1;
 		arguments = argv;
+	}
 	ft_convert_arguments(arguments, index);
 	if (argc == 2)
 		ft_free_arguments(arguments);

@@ -15,15 +15,12 @@
 int	ft_is_sorted(t_struct **s)
 {
 	t_struct	*head;
-	int			prev;
 
 	head = *s;
-	prev = INT_MIN;
-	while (s != NULL)
+	while (head && head->next)
 	{
-		if (head->value < prev)
+		if (head->value > head->next->value)
 			return (0);
-		prev = head->value;
 		head = head->next;
 	}
 	return (1);
