@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 14:35:09 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 14:37:26 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 21:34:13 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int			double_rotate(t_struct **a, t_struct **b);
 int 		reverse_rotate(t_struct **stack, char *s);
 int			double_reverse_rotate(t_struct **a, t_struct **b);
 void		ft_print_operation(char *operation, char *stack);
-void		ft_print_error();
+void		ft_print_error(void);
 void		ft_free_stack(t_struct **s);
 void		ft_free_arguments(char **s);
 void		validate_args(int argc, char **argv);
@@ -45,5 +45,5 @@ t_struct	*ft_struct_last(t_struct *str);
 void		simple_sort(t_struct **a, t_struct **b);
 void 		radix_sort(t_struct **a, t_struct **b);
 
-# endif
+#endif
  

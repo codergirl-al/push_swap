@@ -6,7 +6,7 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 09:45:28 by apeposhi          #+#    #+#              #
-#    Updated: 2023/04/30 11:56:12 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/04/30 21:37:28 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ AUTHORS		=	apeposhi
 NAME		= 	push_swap
 
 CC			=	cc
-CFLAGS 		=	-Wall -Wextra -Werror
+CFLAGS 		=	-Wall -Wextra -Werror -g
 INC			=	-I ./include/
 
 LIBFT_PATH	 =	libft/

@@ -6,11 +6,12 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 14:30:07 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 12:33:21 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 16:03:01 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include <stdio.h>
 
 static int	get_max_bits(t_struct **stack)
 {
@@ -60,3 +61,4 @@ void	radix_sort(t_struct **a, t_struct **b)
 		i++;
 	}
 }
+
