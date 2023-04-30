@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 14:30:07 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 06:06:19 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 06:46:00 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 static int get_max_bits(t_struct **stack)
 {
-  t_struct *head;
-  int max;
-  int max_bits;
+	t_struct *head;
+	int max;
+	int max_bits;
 
-  head = *stack;
-  max = head->index;
-  max_bits = 0;
-  while (head) {
-    if (head->index > max)
-      max = head->index;
-    head = head->next;
-  }
-  while ((max >> max_bits) != 0)
-    max_bits++;
-  return (max_bits);
+	head = *stack;
+	max = head->index;
+	max_bits = 0;
+	while (head) {
+		if (head->index > max)
+		max = head->index;
+		head = head->next;
+	}
+	while ((max >> max_bits) != 0)
+		max_bits++;
+	return (max_bits);
 }
 
 void radix_sort(t_struct **a, t_struct **b)

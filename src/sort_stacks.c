@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 00:51:32 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/30 06:36:38 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 06:58:18 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ static void sort_3(t_struct **a)
       reverse_rotate(a, "a");
     } 
   }
+    ft_printf("\ntest\n");
 }
 
 static void sort_4(t_struct **a, t_struct **b) {
