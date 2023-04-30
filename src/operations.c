@@ -6,7 +6,7 @@
 /*   By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 13:16:47 by apeposhi          #+#    #+#             */
-/*   Updated: 2023/04/27 22:57:25 by apeposhi         ###   ########.fr       */
+/*   Updated: 2023/04/30 06:15:34 by apeposhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,30 @@ int swap(t_struct **stack, char *s)
 {
 	t_struct	*temp;
 	t_struct	*second;
-
-	if (*stack == NULL || (*stack)->next == NULL)
-		return (0);
+    int 		temp_value;
+    int 		temp_index;
 	
+	if (ft_stack_size(*stack) < 2)
+		return (-1);	
 	temp = *stack;
-	second = (*stack)->next;
-	// Top pointer points to the second node - which would be our new first
-	*stack = second;
-	// Next pointer of the new first node points to the old first node
-	temp->next = second->next;
-	// The new second node points to the next node
-	second->next = temp;
-    ft_print_operation("s", s);
-    return (0);
+	second = temp->next;
+	if (!temp && !second)
+		ft_print_error();
+	temp_value = temp->value;
+	temp_index = temp->index;
+	temp->value = second->value;
+	temp->index = second->index;
+	second->value = temp_value;
+	second->index = temp_index;
+	if (s[0] != 'x')
+		ft_print_operation("s", s);
+	return (0);
 }
 
 int	double_swap(t_struct **a, t_struct **b)
 {
+	if ((ft_stack_size(*a) < 2) || (ft_stack_size(*b) < 2))
+		return (-1);
 	swap(a, "x");
 	swap(b, "x");
 	ft_print_operation("s", "s");
@@ -43,15 +49,27 @@ int	double_swap(t_struct **a, t_struct **b)
 int	push(t_struct **src, t_struct **dest, char *s)
 {
 	t_struct	*temp;
-	t_struct	*new_src_top;
+	t_struct	*head_src;
+	t_struct	*head_dest;
 	
-	if (*src == NULL)
-		return (0);
-	temp = *src;
-	new_src_top = (*src)->next;
-	temp->next = *dest;
-	*dest = temp;
-	*src = new_src_top;
+	if (ft_stack_size(*src) == 0)
+		return (-1);
+	head_src = *src;
+	head_dest = *dest;
+	temp = head_src;
+	head_src = head_src->next;
+	*src = head_src;
+	if (!head_dest)
+	{
+		head_dest = temp;
+		head_dest->next = NULL;
+		*dest = head_dest;
+	}
+	else
+	{
+		temp->next = head_dest;
+		*dest = temp;
+	}
 	if (s[0] != 'x')
 		ft_print_operation("p", s);
 	return (0);
@@ -59,27 +77,27 @@ int	push(t_struct **src, t_struct **dest, char *s)
 
 int	rotate(t_struct **stack, char *s)
 {
-	t_struct	*temp;
-	t_struct	*new_first;
-	t_struct	*last;
-	
-	if (*stack == NULL)
-		return (0);
-	temp = *stack;
-	new_first = (*stack)->next;
-	last = 
-	*stack = new_first;
-	temp->next = NULL;
-	last->next = temp;
+    t_struct	*first;
+    t_struct	*last;
+
+    if (ft_stack_size(*stack) < 2)
+            return (-1);
+    first = *stack;
+    last = ft_struct_last(first);
+    *stack = first->next;
+    first->next = NULL;
+    last->next = first;
     if (s[0] != 'x')
-		ft_print_operation("r", s);
-	return (0);
+	    ft_print_operation("r", s);
+    return (0);
 }
 
 int	double_rotate(t_struct **a, t_struct **b)
 {
-	rotate(a, "x");
-	rotate(b, "x");
-	ft_print_operation("rr", "r");
-	return (0);
+    if ((ft_stack_size(*a) < 2) || (ft_stack_size(*b) < 2))
+        return (-1);
+    rotate(a, "x");
+    rotate(b, "x");
+    ft_print_operation("rr", "r");
+    return (0);
 }

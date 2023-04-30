@@ -44,10 +44,14 @@ t_struct	*ft_struct_last(t_struct *str)
 int	ft_stack_size(t_struct *stack)
 {
     int len;
-    len = 0;
-    while (stack) {
+
+    len = 1;
+	if (!stack)
+		return (0);
+    while (stack->next != NULL)
+	{
+		len++;
         stack = stack->next;
-        len++;
     }
     return (len);
 }
